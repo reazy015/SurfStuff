@@ -87,4 +87,16 @@ input[type="radio"]:checked  + label:after {
   .color-item {
     margin-right: 39px;
   }
+  input[type="radio"]:checked  + label:after {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 30px;
+    height: 30px;
+    top: -5px;
+    left: -5px;
+    border-radius: 50%;
+    z-index: 1;
+    background-color: $basic-grey;
+  }
 }

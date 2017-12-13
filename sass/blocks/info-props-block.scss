@@ -1,0 +1,90 @@
+.info-props {
+  margin-bottom: 32px;
+}
+.prop {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 12px;
+}
+.prop__name {
+  min-width: 75px;
+  font-weight: 400;
+  font-size: 14px;
+  color: $basic-font-grey;
+}
+.prop__value {
+  font-size: 14px;
+  font-weight: 700;
+}
+.color {
+  @include default-list;
+  padding-left: 3px;
+  padding-top: 6px;
+  display: flex;
+  flex-direction: row;
+}
+.color-item {
+  margin-right: 24px;
+}
+.color-item input[type="radio"] {
+  display: none;
+}
+.color-item__label {
+  position: relative;
+  cursor: pointer;
+
+  &--green {
+    background-color: $basic-green;
+  }
+  &--blue {
+    background-color: $basic-blue;
+  }
+  &--purple {
+    background-color: $basic-purple;
+  }
+
+  &:before {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: inherit;
+    z-index: 2;
+  }
+}
+input[type="radio"]:checked  + label:after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 16px;
+  height: 16px;
+  top: -4px;
+  left: -4px;
+  border-radius: 50%;
+  z-index: 1;
+  background-color: $basic-grey;
+}
+@media(max-width: 512px) {
+  .prop {
+    margin-bottom: 16px;
+  }
+  .prop__name, .prop__value {
+    font-size: 32px;
+  }
+  .prop__name {
+    min-width: 160px;
+  }
+  .color-item__label:before {
+    width: 20px;
+    height: 20px;
+  }
+  .color {
+    padding-left: 8px;
+    padding-top: 3px;
+  }
+  .color-item {
+    margin-right: 39px;
+  }
+}

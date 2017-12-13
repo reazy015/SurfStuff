@@ -1,0 +1,9 @@
+@mixin default-list {
+  padding-left: 0px;
+  margin: 0;
+  list-style: none;
+}
+@mixin default-link {
+  text-decoration: none;
+  color: $basic-font-color;
+}

@@ -1,0 +1,51 @@
+.signin-btn {
+  background: none;
+  border: 1px solid $basic-purple;
+  border-radius: 5px;
+  color: $basic-purple;
+  margin-right: 3px;
+  margin-left: 85px;
+  padding-left: 34px;
+  padding-right: 17px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  cursor: pointer;
+  transition: background-color, color .3s;
+  outline: none;
+
+  &:hover > .signin-btn__text:before {
+    background-image: url('../img/man-user-white.png');
+  }
+  &:hover {
+    background-color: $hover-purple;
+    color: $basic-white;
+  }
+  &:active {
+    background-color: $active-purple;
+  }
+}
+.signin-btn__text {
+  position: relative;
+  margin-left: 5px;
+
+  &:before {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 14px;
+    height: 16px;
+    left: -24px;
+    background-image: url('../img/man-user.png');
+  }
+}
+@media(max-width: 880px) {
+  .signin-btn {
+    margin-left: 0;
+  }
+}
+@media(max-width: 719px) {
+  .signin-btn {
+    order: 2;
+    margin-left: auto;
+  }
+}

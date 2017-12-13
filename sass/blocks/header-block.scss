@@ -1,0 +1,15 @@
+.header {
+  padding-bottom: 13px;
+  border-bottom: 1px solid $basic-grey;
+}
+.page-header__wrapper {
+  display: flex;
+  flex-direction: row;
+  padding-top: 14px;
+}
+
+@media (max-width: 880px) {
+  .page-header__wrapper {
+    justify-content: space-between;
+  }
+}

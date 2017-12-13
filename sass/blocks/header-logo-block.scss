@@ -1,0 +1,35 @@
+.header-logo {
+  @include default-link;
+  padding-top: 3px;
+  display: flex;
+}
+.header-logo__text {
+  font-size: 18px;
+  padding-left: 9px;
+  padding-top: 6px;
+
+  &:nth-of-type(2){
+    padding-left: 3px;
+  }
+}
+.header-logo__text--colored {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: $basic-purple;
+}
+@media(max-width: 719px) {
+  .header-logo {
+    order: 1;
+  }
+}
+@media(max-width: 719px) {
+  .header-logo {
+    z-index: 100;
+  }
+  .header-logo__text--active {
+    color: $basic-white;
+  }
+  .svg-logo--active{
+    stroke: $basic-purple;
+  }
+}

@@ -3,6 +3,7 @@ const mobileMenuSwitchBtn = document.querySelector('.header-nav-toggle');
 const logoImg = document.querySelector('.svg-logo');
 const logoText = document.querySelectorAll('.header-logo__text')[0];
 const decorHamburger = document.querySelectorAll('.header-nav-toggle__decor');
+const ESC_KEYCODE = 27;
 
 function Menu(btn, menu){
   const self = this;
@@ -21,10 +22,20 @@ function Menu(btn, menu){
     logoText.classList.toggle('header-logo__text--active');
   }
 
-  function openCloseMenu(e){
+  function closeByBtn(evt){
+    if (self.menu.classList.contains('nav-list--active') && evt.keyCode === ESC_KEYCODE) {
+      self.menu.classList.remove('nav-list--active');
+      showLogoText();
+      showHideNavToggleBtn();
+      document.removeEventListener('keydown', closeByBtn);
+    }
+  }
+
+  function openCloseMenu(){
     self.menu.classList.toggle('nav-list--active');
     showLogoText();
     showHideNavToggleBtn();
+    document.addEventListener('keydown', closeByBtn);
   }
 }
 
